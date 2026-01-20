@@ -42,7 +42,8 @@ const SellerDashboard: React.FC<SellerDashboardProps> = ({ user, token, onAddPro
         });
     } catch (e) {
         console.error("Analysis failed", e);
-        alert("Error al contactar el servicio de IA");
+        // Fallback local visual si falla todo (aunque el backend ya tiene fallback)
+        alert("El servicio de análisis está tardando. Verifica tu conexión.");
     } finally {
         setIsAnalyzing(false);
     }
